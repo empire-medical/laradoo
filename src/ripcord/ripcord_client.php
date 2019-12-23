@@ -231,7 +231,7 @@ class Ripcord_Client
 		$this->_rootClient->_response = $response;
 		if ( ripcord::isFault( $result ) && $this->_throwExceptions ) 
 		{
-			throw new Ripcord_RemoteException($result['faultString'], $result['faultCode']);
+			throw new Ripcord_RemoteException($result['faultString'], (int) $result['faultCode']);
 		}
 		if ( isset($bound) && is_array( $bound ) ) 
 		{
